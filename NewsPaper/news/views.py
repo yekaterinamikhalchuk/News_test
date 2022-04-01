@@ -9,7 +9,6 @@ class PostsList(ListView):
     queryset = Post.objects.order_by('creation_date')
 
 
-
 class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
