@@ -20,7 +20,7 @@ class Author(models.Model):
         return f'{self.user_rating}'
 
     def __str__(self):
-        return f'{self.user.title()}'
+        return f'{self.user}'
 
 
 class Category(models.Model):
