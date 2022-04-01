@@ -3,7 +3,6 @@ from django.db import models
 
 from django.db.models import Sum
 
-from ArticleNewsChoice import POSITIONS, article, news
 
 
 class Author(models.Model):
@@ -20,6 +19,9 @@ class Author(models.Model):
 
         return f'{self.user_rating}'
 
+    def __str__(self):
+        return f'{self.user.title()}'
+
 
 class Category(models.Model):
     category_name = models.CharField(
@@ -32,8 +34,11 @@ class Post(models.Model):
 
     news_type = models.CharField(
         max_length=2,
-        choices=POSITIONS,
-        default=article
+        choices=[
+    ('A', 'Article'),
+    ('N', 'News')
+],
+        default='A'
     )
     creation_date = models.DateTimeField(
         auto_now_add=True
