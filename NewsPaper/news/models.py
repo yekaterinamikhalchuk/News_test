@@ -4,7 +4,6 @@ from django.db import models
 from django.db.models import Sum
 
 
-
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_rating = models.IntegerField(default=0)
@@ -64,6 +63,9 @@ class Post(models.Model):
     def preview(self):
         pre_text = 124 if len(self.post_text) > 124 else len(self.post_text)
         return self.post_text[:pre_text]+'...'
+
+    def get_absolute_url(self):
+        return f'/news/{self.id}'
 
 
 class PostCategory(models.Model):
