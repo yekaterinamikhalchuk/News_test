@@ -2,7 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import FormMixin, CreateView
+from django.views.generic.edit import FormMixin, CreateView, UpdateView, DeleteView
 
 from .filters import PostFilter
 from .forms import ProductForm
@@ -26,7 +26,7 @@ class PostsList(ListView, FormMixin):
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET,
                                        queryset=self.get_queryset())
-        context['form'] = ProductForm()
+
         return context
 
 
@@ -36,11 +36,23 @@ class PostDetailView(DetailView):
     queryset = Post.objects.all()
 
 
-# дженерик для создания объекта. Надо указать только имя шаблона и класс формы, который мы написали в прошлом юните. Остальное он сделает за вас
 class PostCreateView(CreateView):
     template_name = 'post_create.html'
     form_class = ProductForm
 
 
+class PostUpdateView(UpdateView):
+    template_name = 'post_create.html'
+    form_class = ProductForm
+
+    def get_object(self, **kwargs):
+        post_id = self.kwargs.get('pk')
+        return Post.objects.get(pk=post_id)
+
+
+class PostDeleteView(DeleteView):
+    template_name = 'post_delete.html'
+    queryset = Post.objects.all()
+    success_url = '/news/'
 
 
