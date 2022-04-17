@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views import View
@@ -11,7 +12,7 @@ from .models import Post
 
 class PostsList(ListView, FormMixin):
     model = Post
-    template_name = 'news_list.html'
+    template_name = 'news/news_list.html'
     context_object_name = 'posts'
     queryset = Post.objects.order_by('creation_date')
     paginate_by = 10
@@ -32,18 +33,20 @@ class PostsList(ListView, FormMixin):
 
 # дженерик для получения деталей о товаре
 class PostDetailView(DetailView):
-    template_name = 'post_detail.html'
+    template_name = 'news/post_detail.html'
     queryset = Post.objects.all()
 
 
-class PostCreateView(CreateView):
-    template_name = 'post_create.html'
+class PostCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
+    template_name = 'news/post_create.html'
     form_class = ProductForm
+    permission_required = ('news.add_post',)
 
 
-class PostUpdateView(UpdateView):
-    template_name = 'post_create.html'
+class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin,UpdateView):
+    template_name = 'news/post_create.html'
     form_class = ProductForm
+    permission_required = ('news.change_post',)
 
     def get_object(self, **kwargs):
         post_id = self.kwargs.get('pk')
@@ -51,7 +54,7 @@ class PostUpdateView(UpdateView):
 
 
 class PostDeleteView(DeleteView):
-    template_name = 'post_delete.html'
+    template_name = 'news/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
 

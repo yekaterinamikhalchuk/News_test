@@ -1,11 +1,14 @@
-{% extends 'flatpages/default.html' %}
+{% extends 'default.html' %}
 {% load custom_filters %}
+
 {% block title %}
 Post
 {% endblock title %}
 
 
 {% block content %}
+<h1>All news</h1>
+    {% if post %}
         <table>
             <tr>
                 <td>
@@ -31,4 +34,7 @@ Post
             </tr>
 
         </table>
+    {% else %} <!-- Если товаров нет, то говорим, что товаров нет ;) -->
+        <h2>The are no posts!</h2>
+    {% endif %}
 {% endblock content %}

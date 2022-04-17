@@ -3,7 +3,7 @@ from .models import Post
 
 
 class ProductForm(ModelForm):
-    check_box = BooleanField(label='Ало, Галочка!')
+    check_box = BooleanField(label='Confirm changes')
 
     class Meta:
         model = Post
