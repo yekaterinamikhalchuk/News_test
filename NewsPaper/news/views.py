@@ -43,7 +43,7 @@ class PostCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post',)
 
 
-class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin,UpdateView):
+class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     template_name = 'news/post_create.html'
     form_class = ProductForm
     permission_required = ('news.change_post',)
@@ -53,9 +53,10 @@ class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin,UpdateView):
         return Post.objects.get(pk=post_id)
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     template_name = 'news/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
+    permission_required = ('news.delete_post',)
 
 
