@@ -7,4 +7,4 @@ class ProductForm(ModelForm):
 
     class Meta:
         model = Post
-        fields = ['news_type', 'post_title', 'post_text', 'author', 'check_box']
+        fields = ['news_type', 'post_title', 'post_text', 'author', 'categories']

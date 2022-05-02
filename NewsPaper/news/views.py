@@ -66,8 +66,7 @@ def subscribe(request, **kwargs):
     post = Post.objects.get(pk=kwargs['pk'])
     user = request.user
     category_id = kwargs['pk']
-    category = Category.objects.get(pk=int(category_id))
-    for category in post.category.all():
+    for category in post.categories.all():
         if user not in category.subscribers.all():
             category.subscribers.add(user)
     return redirect('/news')
@@ -78,8 +77,7 @@ def unsubscribe(request, **kwargs):
     post = Post.objects.get(pk=kwargs['pk'])
     user = request.user
     category_id = kwargs['pk']
-    category = Category.objects.get(pk=int(category_id))
-    for category in post.category.all():
+    for category in post.categories.all():
         if user in category.subscribers.all():
             category.subscribers.delete(user)
     return redirect('/news')

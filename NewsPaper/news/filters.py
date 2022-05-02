@@ -17,4 +17,5 @@ class PostFilter(FilterSet):
             'post_title',
             'post_text',
             'creation_date',
-            'author')
+            'author',
+            'categories')

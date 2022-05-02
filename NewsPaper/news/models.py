@@ -28,6 +28,11 @@ class Category(models.Model):
         unique=True
     )
 
+    subscribers = models.ManyToManyField(User, through='UserCategory')
+
+    def __str__(self):
+        return f'{self.category_name}'
+
 
 class Post(models.Model):
 
@@ -91,5 +96,9 @@ class Comment(models.Model):
     def dislike(self):
         self.comment_rating -= 1
         self.save()
+
+class UserCategory(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
