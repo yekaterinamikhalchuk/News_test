@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="Button 'Subscribe' is edited">
+    <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="Filters are edited">
+      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/news/subscription.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/news/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/news/post_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -36,6 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/NewsPaper/sign" />
@@ -69,7 +74,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651506266695</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Filters are edited">
+      <created>1651506883584</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651506883584</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Filters are edited">
+      <created>1651506892594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651506892596</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Permission for delete_post is edited" />
     <MESSAGE value="Button 'Subscribe' is edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="Button 'Subscribe' is edited" />
+    <MESSAGE value="Filters are edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filters are edited" />
   </component>
 </project>

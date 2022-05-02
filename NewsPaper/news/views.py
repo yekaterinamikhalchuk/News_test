@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin, CreateView, UpdateView, DeleteView
 
 from .filters import PostFilter
-from .forms import ProductForm
+from .forms import ProductForm, CategoryForm
 from .models import Post, Category
 
 
@@ -63,26 +63,40 @@ class PostDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
 
 @login_required
 def subscribe(request, **kwargs):
-    post = Post.objects.get(pk=kwargs['pk'])
+    # post = Post.objects.get(pk=kwargs['pk'])
+    # user = request.user
+    # for category in post.categories.all():
+    #     if user not in category.subscribers.all():
+    #         category.subscribers.add(user)
+    category = Category.objects.get(pk=kwargs['pk'])
     user = request.user
-    category_id = kwargs['pk']
-    for category in post.categories.all():
-        if user not in category.subscribers.all():
-            category.subscribers.add(user)
-    return redirect('/news')
+    if user not in category.subscribers.all():
+        category.subscribers.add(user)
+
+    return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
 @login_required
 def unsubscribe(request, **kwargs):
-    post = Post.objects.get(pk=kwargs['pk'])
+    # post = Post.objects.get(pk=kwargs['pk'])
+    # user = request.user
+    # for category in post.categories.all():
+    #     if user in category.subscribers.all():
+    #         category.subscribers.remove(user)
+    category = Category.objects.get(pk=kwargs['pk'])
     user = request.user
-    category_id = kwargs['pk']
-    for category in post.categories.all():
-        if user in category.subscribers.all():
-            category.subscribers.delete(user)
-    return redirect('/news')
+    if user in category.subscribers.all():
+        category.subscribers.remove(user)
+    return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
+class CategoriesSubsription(LoginRequiredMixin, ListView, FormMixin):
+    model = Category
+    template_name = 'news/subscription.html'
+    context_object_name = 'subscription'
+    form_class = CategoryForm
 
-
-
+    def get_context_data(self,
+                         **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context

@@ -99,6 +99,6 @@ class Comment(models.Model):
 
 class UserCategory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='user_category')
 
 
