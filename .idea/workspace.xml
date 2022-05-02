@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NewsPaper/protect/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/protect/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/protect/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/protect/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPaper/sign/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
+    <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="Permission for delete_post is edited">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/news/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/news/post_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +53,14 @@
       <option name="presentableId" value="Default" />
       <updated>1651493466012</updated>
     </task>
+    <task id="LOCAL-00001" summary="Permission for delete_post is edited">
+      <created>1651498093460</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651498093461</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,5 +73,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Permission for delete_post is edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="Permission for delete_post is edited" />
   </component>
 </project>

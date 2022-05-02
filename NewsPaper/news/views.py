@@ -1,13 +1,14 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.paginator import Paginator
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin, CreateView, UpdateView, DeleteView
 
 from .filters import PostFilter
 from .forms import ProductForm
-from .models import Post
+from .models import Post, Category
 
 
 class PostsList(ListView, FormMixin):
@@ -58,5 +59,32 @@ class PostDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     queryset = Post.objects.all()
     success_url = '/news/'
     permission_required = ('news.delete_post',)
+
+
+@login_required
+def subscribe(request, **kwargs):
+    post = Post.objects.get(pk=kwargs['pk'])
+    user = request.user
+    category_id = kwargs['pk']
+    category = Category.objects.get(pk=int(category_id))
+    for category in post.category.all():
+        if user not in category.subscribers.all():
+            category.subscribers.add(user)
+    return redirect('/news')
+
+
+@login_required
+def unsubscribe(request, **kwargs):
+    post = Post.objects.get(pk=kwargs['pk'])
+    user = request.user
+    category_id = kwargs['pk']
+    category = Category.objects.get(pk=int(category_id))
+    for category in post.category.all():
+        if user in category.subscribers.all():
+            category.subscribers.delete(user)
+    return redirect('/news')
+
+
+
 
 

@@ -1,4 +1,4 @@
-from .views import PostsList, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from .views import PostsList, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, subscribe
 from django.urls import path
 
 
@@ -9,4 +9,5 @@ urlpatterns = [
     path('create/', PostCreateView.as_view(), name='post_create'),
     path('edit/<int:pk>', PostUpdateView.as_view(), name='post_update'),
     path('delete/<int:pk>', PostDeleteView.as_view(), name='post_delete'),
+    path('subscribe/<int:pk>', subscribe, name='subscribe')
 ]
