@@ -17,10 +17,12 @@ Category subscriptions
             {% for category in object_list %} <!-- Для каждого товара будете генерироваться новая строчка, т. е. новый html-код. При этом сам цикл работает точно так же, как и в Python. product — переменная цикла, т. е. наш товар, взятый из общего списка -->
             <tr>
 <td>
-            {{ category.category_name }}<!-- При нажатии на имя товара в таблице нас теперь будет перекидывать на страницу с самого товара -->
+            {{ category.category_name }}
+            {% if not user in category.subscribers.all %}
             <a href="{% url 'subscribe' category.id %}"><u>Subscribe</u></a> <!-- добавим ссылку на редактирование товара-->
-
+            {% elif user in category.subscribers.all %}
             <a href="{% url 'unsubscribe' category.id  %}"><u> Unsubscribe </u></a> <!-- добавим ссылку на удаление товара-->
+            {%endif%}
 </td>
             </tr>
             {% endfor %}

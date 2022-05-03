@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load account %} <!-- Загружаем тег, который позволит получить нам ссылку на подтверждение -->
+    <center> <h1>Welcome to NewsChannel!</h1></center>
+
+    You’re just one click away from getting started with NewsChannel.
+    All you need to do is verify your email address to activate your NewsChannel account.
+    <br>
+    <center> <button><a href="{{ activate_url }}">Confirm My Email</a> </button> </center>
+    <br>
+    Once your account is activated, you can start learning a lot of new things
+        and sharing your own news on the NewsChannel.
+    <br>
+    You’re receiving this email because you recently created a new NewsChannel account or added a new email address.
+        If this wasn’t you, please ignore this email.
+     <!-- Вставляем ссылку на активацию -->
+</body>
+</html>

@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="Filters are edited">
-      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/news/subscription.html" afterDir="false" />
+    <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="Subscription page is edited">
+      <change afterPath="$PROJECT_DIR$/NewsPaper/news/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/account/email/email_confirmation_signup_message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/templates/news/send.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/news/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/news/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/sign/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/sign/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/news/subscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/news/subscription.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651506892596</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Subscription page is edited">
+      <created>1651522811054</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651522811057</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Subscription page is edited">
+      <created>1651522820712</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651522820712</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +123,18 @@
     <MESSAGE value="Permission for delete_post is edited" />
     <MESSAGE value="Button 'Subscribe' is edited" />
     <MESSAGE value="Filters are edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filters are edited" />
+    <MESSAGE value="Subscription page is edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="Subscription page is edited" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file:///Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/contrib/auth/mixins.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
