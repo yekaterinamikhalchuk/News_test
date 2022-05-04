@@ -6,7 +6,24 @@
     <title>{{ subject }}</title>
 </head>
 <body>
-    <h1>{{ text_message }} по ссылке!</h1>
+<center>Dear {{ my_post.author.user }},</center>
+<br>
+
+
+
+New post of the category {% for cat in my_post.categories.all %} {{ cat.category_name }} {% endfor %}
+is on the NewsChannel: <b>
+    <br> <center> <a href= "http://127.0.0.1:8000/news/{{ my_post.id }}">{{my_post.post_title}}</a> </center> </b>
+        <br>
+
+    <hr>
+    <p>
+
+
+       <center> {{my_post.post_text|truncatechars:100}}</center>
+        <center><a href= "http://127.0.0.1:8000/news/{{ my_post.id }}">To continue reading</a></center>
+
+    </p>
 </body>
 
 </html>

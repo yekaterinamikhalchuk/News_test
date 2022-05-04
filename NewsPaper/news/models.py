@@ -37,7 +37,7 @@ class Category(models.Model):
         result = set()
         for user in self.subscribers.all():
             result.add(user.email)
-        return
+        return result
 
 
 class Post(models.Model):
