@@ -6,23 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-{{ request.user }} Список новостей категории <b>"{{cat}}"</b> за неделю:
+{{ user.username }} New posts of <b>"{{categories}}"</b> category have been added this week!
         <br>
-<table>
-    {% for post in post %}
-    {% if cat in post.categories.all%}
-    <tr>
-        <td>{{post.post_title}} -></td>
-        <td><a href="http://127.0.0.1:8000/news/{{ post.id }}">ссылка</a></td>
-    </tr>
+<br>
+    {% for post in posts %}
+    {% if categories in post.categories.all%}
+<br>
+    <a href="http://127.0.0.1:8000/news/{{ post.id }}">{{post.post_title}}</a>
+    <br>
+<br>
+    <i>{{post.post_text|truncatechars:100}}</i>
+        <hr>
+    <br>
     {% endif %}
     {% endfor %}
-</table>
 
 
-    <p> краткое содержание:
-    <br>
-    {{my_post.post_text|truncatechars:50}}
-    </p>
 </body>
 </html>

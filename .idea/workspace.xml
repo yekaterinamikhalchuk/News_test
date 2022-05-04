@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ca5fc524-60a9-4e0a-951e-135c4f9fd431" name="Changes" comment="Subscription page is edited">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/templates/account/email/weekly_mailing.html" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/templates/account/email/weekly_mailing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651659378662</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Subscription page is edited">
+      <created>1651691060133</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651691060133</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
