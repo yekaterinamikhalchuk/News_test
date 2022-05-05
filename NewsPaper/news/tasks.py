@@ -28,3 +28,6 @@ def send_weekly_mail():
             to=category.get_subscribers_emails())
         msg.attach_alternative(html_content, "text/html")
         msg.send()
+
+
+
