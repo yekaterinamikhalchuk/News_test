@@ -120,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651692506842</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Email for category subscribers' is added">
+      <created>1651692883227</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651692883228</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Email for category subscribers' is added">
+      <created>1651693047281</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651693047282</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
