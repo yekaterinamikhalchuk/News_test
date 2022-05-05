@@ -1,8 +1,9 @@
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.core.paginator import Paginator
-from django.shortcuts import render, redirect
-from django.views import View
+
+from django.shortcuts import redirect
+
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin, CreateView, UpdateView, DeleteView
 
@@ -104,3 +105,6 @@ class CategoriesSubsription(LoginRequiredMixin, ListView, FormMixin):
                          **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+
