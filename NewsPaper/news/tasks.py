@@ -30,4 +30,21 @@ def send_weekly_mail():
         msg.send()
 
 
+@shared_task
+def send_when_post_created(instance, action, pk_set, *args, **kwargs):
+    if action == 'post_add':
+        html_content = render_to_string('email/send.html', {'my_post': instance}, )
+        cats = instance.categories.all()
+        sendto_set = set()
+        # формируем список для рассылки
+        for cat in cats:
+            sendto_set |= cat.get_subscribers_emails()
+        # if len(cats) == 1:
+        msg = EmailMultiAlternatives(
+            subject=f'{instance.post_title}',
+            body=f'{instance.post_text}',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=sendto_set)
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
 
