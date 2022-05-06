@@ -1,36 +1,41 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
-{% block title %} Posts {% endblock title %}
+{% load cache %}
+    {% cache 300 header %}
+        {% block title %}
+            Posts
+        {% endblock title %}
+    {% endcache %}
  
-{% block content %}
-<h2>Do you want to delete this post?</h2>
-        <table>
-            <tr>
-                <td>
-                    Title
-                </td>
-                <td>
-                    Publication date
-                </td>
-                <td>
-                    Content
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    {{ post.post_title }}
-                </td>
-                <td>
-                    {{ post.creation_date|date:'d.M.Y H:m' }}
-                </td>
-                <td>
-                    {{ post.post_text | censor }}
-                </td>
-            </tr>
+    {% block content %}
+    <h2>Do you want to delete this post?</h2>
+            <table>
+                <tr>
+                    <td>
+                        Title
+                    </td>
+                    <td>
+                        Publication date
+                    </td>
+                    <td>
+                        Content
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{ post.post_title }}
+                    </td>
+                    <td>
+                        {{ post.creation_date|date:'d.M.Y H:m' }}
+                    </td>
+                    <td>
+                        {{ post.post_text | censor }}
+                    </td>
+                </tr>
 
-        </table>
- 
-<form method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Confirm"></form>
-{% endblock content %} 
+            </table>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Confirm"></form>
+    {% endblock content %}

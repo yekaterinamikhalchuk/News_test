@@ -1,8 +1,12 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
-{% block title %}
-Category subscriptions
-{% endblock title %}
+
+{% load cache %}
+    {% cache 300 header %}
+        {% block title %}
+            Category subscriptions
+        {% endblock title %}
+    {% endcache %}
 
 
 {% block content %}

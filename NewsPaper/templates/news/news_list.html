@@ -2,9 +2,12 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
 
-{% block title %}
-Post
-{% endblock title %}
+{% load cache %}
+    {% cache 300 header %}
+        {% block title %}
+        Post
+        {% endblock title %}
+    {% endcache %}
 
 {% block content %}
 <h1>All news</h1>

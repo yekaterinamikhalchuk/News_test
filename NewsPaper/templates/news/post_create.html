@@ -1,12 +1,16 @@
 {% extends 'default.html' %}
+{% load cache %}
+    {% cache 300 header %}
+        {% block title %}
+            Post list
+        {% endblock title %}
+    {% endcache %}
  
-{% block title %} Post list {% endblock title %}
- 
-{% block content %}
-<h3>Information about post</h3>
-<form method="POST">
-    {% csrf_token %} 
-    {{ form }}
-    <input type="submit" value="Add post">
-</form>
-{% endblock content %}
+    {% block content %}
+        <h3>Information about post</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Add post">
+        </form>
+    {% endblock content %}

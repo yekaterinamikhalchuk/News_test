@@ -1,8 +1,12 @@
 {% extends 'default.html' %}
 {% load custom_filters %}
-{% block title %}
-Post
-{% endblock title %}
+
+{% load cache %}
+    {% cache 300 header %}
+        {% block title %}
+        Post
+        {% endblock title %}
+    {% endcache %}
 
 
 {% block content %}
@@ -36,7 +40,10 @@ Post
 <br>
 {% if request.user.is_authenticated %}
     <p>
+    {% load cache %}
+        {% cache 300 header %}
         <h6>You may subscribe to the news of this post's categories:</h6>
+        {% endcache %}
         {%for category in post.categories.all%}
         <br>{{category}}
         {% if not user in category.subscribers.all %}
