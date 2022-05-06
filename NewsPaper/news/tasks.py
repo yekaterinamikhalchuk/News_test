@@ -13,38 +13,30 @@ from .models import Post, Category
 
 @shared_task()
 def send_weekly_mail():
-    time_delta = datetime.timedelta(7)
-    start_date = datetime.datetime.utcnow() - time_delta
-    end_date = datetime.datetime.utcnow()
-    recent_posts = Post.objects.filter(creation_date__range=(start_date, end_date))
+    from_date = datetime.datetime.now() - datetime.timedelta(days=7)
 
     for category in Category.objects.all():
-        html_content = render_to_string('account/email/weekly_mailing.html',
-                                        {'posts': recent_posts, 'categories': category}, )
-        msg = EmailMultiAlternatives(
-            subject=f'"Have you seen new posts of the interesting categories this week?"',
-            body="NewsList",
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            to=category.get_subscribers_emails())
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
+        recent_posts = Post.objects.filter(categories=category).filter(creation_date__gte=(from_date))
+        if recent_posts.exists():
+            html_content = render_to_string('account/email/weekly_mailing.html',
+                                            {'posts': recent_posts, 'categories': category}, )
+            msg = EmailMultiAlternatives(
+                subject=f'"Have you seen new posts of the interesting categories this week?"',
+                body="NewsList",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=category.get_subscribers_emails())
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
 
 
 @shared_task
-def send_when_post_created(instance, action, pk_set, *args, **kwargs):
-    if action == 'post_add':
-        html_content = render_to_string('email/send.html', {'my_post': instance}, )
-        cats = instance.categories.all()
-        sendto_set = set()
-        # формируем список для рассылки
-        for cat in cats:
-            sendto_set |= cat.get_subscribers_emails()
-        # if len(cats) == 1:
-        msg = EmailMultiAlternatives(
-            subject=f'{instance.post_title}',
-            body=f'{instance.post_text}',
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            to=sendto_set)
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
+def news_mail(subject, from_email, recipients, html_content):
+    msg = EmailMultiAlternatives(
+                subject=subject,
+                from_email=from_email,
+                to=recipients
+            )
+
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
 
