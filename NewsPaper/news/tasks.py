@@ -33,7 +33,7 @@ def send_weekly_mail():
 @shared_task
 def send_when_post_created(instance, action, pk_set, *args, **kwargs):
     if action == 'post_add':
-        html_content = render_to_string('email/send.html', {'my_post': instance}, )
+        html_content = render_to_string('account/email/send.html', {'my_post': instance}, )
         cats = instance.categories.all()
         sendto_set = set()
         # формируем список для рассылки
