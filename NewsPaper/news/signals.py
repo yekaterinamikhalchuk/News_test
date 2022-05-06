@@ -10,7 +10,7 @@ from django.conf import settings
 # @receiver(m2m_changed, sender=Post.categories.through)
 # def notify_subscribers(sender, instance, action, **kwargs):
 #     if action == 'post_add':
-#         html_content = render_to_string('news/send.html', {'my_post': instance}, )
+#         html_content = render_to_string('account/email/send.html', {'my_post': instance}, )
 #         cats = instance.categories.all()
 #         sendto_set = set()
 #         # формируем список для рассылки
