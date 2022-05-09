@@ -1,0 +1,64 @@
+2022-05-09 18:31:39,751 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/index.html'), <traceback object at 0x1109da7c0>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/index.html
+2022-05-09 18:31:39,752 ERROR "GET / HTTP/1.1" 500 79797 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 18:32:28,333 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/index.html'), <traceback object at 0x110938b00>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/index.html
+2022-05-09 18:32:28,334 ERROR "GET / HTTP/1.1" 500 79797 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 18:32:28,739 ERROR Internal Server Error: /news/ /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('news/news_list.html, news/post_list.html'), <traceback object at 0x110a49000>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: news/news_list.html, news/post_list.html
+2022-05-09 18:32:28,739 ERROR "GET /news/ HTTP/1.1" 500 82045 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 18:36:15,353 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/index.html'), <traceback object at 0x10e46a8c0>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/index.html
+2022-05-09 18:36:15,354 ERROR "GET / HTTP/1.1" 500 79797 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
