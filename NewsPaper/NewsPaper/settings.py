@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,8 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'news.middlewares.TimezoneMiddleware',
 ]
 
 ROOT_URLCONF = 'NewsPaper.urls'
@@ -117,15 +118,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
+#
+# LANGUAGE_CODE = 'ru'
+LANGUAGES = [
+    ('en-us', 'English'),
+    ('ru', 'Русский')
+]
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -252,9 +259,20 @@ LOGGING = {
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter':'style_warning'
         },
+        'news': {
+            'level': 'INFO',
+            'filters': ['require_debug_false'],
+            'class': 'logging.FileHandler',
+            'formatter': 'style_debug',
+            'filename': os.path.join(BASE_DIR, 'logs/news.log'),
+        },
     },
 
     'loggers': {
+        'news.views': {
+            'handlers': ['news'],
+            'propagate': True,
+        },
         'django': {
             'handlers': ['general_log', 'errors_log'],
             'propagate': True,

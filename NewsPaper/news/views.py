@@ -1,10 +1,12 @@
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.http import HttpResponse
 
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 
 from django.core.cache import cache
+from django.views import View
 
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin, CreateView, UpdateView, DeleteView
@@ -12,6 +14,8 @@ from django.views.generic.edit import FormMixin, CreateView, UpdateView, DeleteV
 from .filters import PostFilter
 from .forms import PostForm, CategoryForm
 from .models import Post, Category, Author
+from django.utils import timezone
+import pytz  # импортируем стандартный модуль для работы с часовыми поясами
 
 
 class PostsList(ListView, FormMixin):
@@ -118,6 +122,29 @@ class CategoriesSubsription(LoginRequiredMixin, ListView, FormMixin):
                          **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+
+class Index(View):
+    def get(self, request):
+        curent_time = timezone.now()
+
+        # .  Translators: This message appears on the home page only
+        models = Post.objects.all()
+
+        context = {
+            'models': models,
+            'current_time': timezone.now(),
+            'timezones': pytz.common_timezones  # добавляем в контекст все доступные часовые пояса
+        }
+
+        return HttpResponse(render(request, 'default.html', context))
+
+    #  по пост-запросу будем добавлять в сессию часовой пояс, который и будет обрабатываться написанным нами ранее middleware
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('/')
+
 
 
 

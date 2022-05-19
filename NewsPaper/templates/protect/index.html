@@ -1,9 +1,15 @@
 {% extends "default.html" %}
+{% load i18n %}
 
 {% block content %}
+
+
 <h2>Страница авторизованного пользователя {{request.user.username}}</h2>
 <div> Здесь может содержаться персональная информация для каждого пользователя </div>
 
+
+
+{% trans "Check out my new cool translation" %}!
 <button> <a href="sign/logout/">Выйти</a> </button>
 
 {% if is_not_author %}

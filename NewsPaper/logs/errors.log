@@ -62,3 +62,427 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
 django.template.exceptions.TemplateDoesNotExist: protect/index.html
 2022-05-09 18:36:15,354 ERROR "GET / HTTP/1.1" 500 79797 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 19:59:59,615 ERROR Internal Server Error: /news/ /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 19: 'get_available_languages'. Did you forget to register or load this tag?"), <traceback object at 0x10efefec0>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_available_languages'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 19: 'get_available_languages'. Did you forget to register or load this tag?
+2022-05-09 19:59:59,617 ERROR "GET /news/ HTTP/1.1" 500 187864 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:00:20,879 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10ef680c0>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:00:20,880 ERROR "GET / HTTP/1.1" 500 137562 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:04:52,127 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10ee89980>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:04:52,128 ERROR "GET / HTTP/1.1" 500 137562 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:48:37,195 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10ceb4180>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:48:37,200 ERROR "GET / HTTP/1.1" 500 134023 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:48:39,562 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10cd7e7c0>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:48:39,563 ERROR "GET / HTTP/1.1" 500 134023 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:48:43,056 ERROR Internal Server Error: / /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10cd99680>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:48:43,057 ERROR "GET / HTTP/1.1" 500 134023 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:48:43,524 ERROR Internal Server Error: /news/ /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10cd7da40>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:48:43,525 ERROR "GET /news/ HTTP/1.1" 500 144244 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-09 20:49:33,454 ERROR Internal Server Error: /news/ /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name."), <traceback object at 0x10d08cdc0>)
+Traceback (most recent call last):
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 62, in render
+    return self.template.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/base.py", line 958, in render_annotated
+    return self.render(context)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 472, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 802, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2022-05-09 20:49:33,455 ERROR "GET /news/ HTTP/1.1" 500 144376 /Users/mikhalchuk/PycharmProjects/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-19 10:55:15,607 ERROR Internal Server Error: /news/ /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid filter: 'timezone'"), <traceback object at 0x110a03500>)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 696, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'timezone'
+2022-05-19 10:55:15,608 ERROR "GET /news/ HTTP/1.1" 500 217124 /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/servers/basehttp.py None
+2022-05-19 12:13:18,385 ERROR Internal Server Error: /news/ /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 11: 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x10e7d1940>)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endcache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/engine.py", line 176, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/engine.py", line 158, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'endcache'. Did you forget to register or load this tag?
+2022-05-19 12:13:18,386 ERROR "GET /news/ HTTP/1.1" 500 178074 /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/servers/basehttp.py None

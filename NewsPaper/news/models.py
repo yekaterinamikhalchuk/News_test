@@ -54,7 +54,7 @@ class Post(models.Model):
     creation_date = models.DateTimeField(
         auto_now_add=True
     )
-    post_title = models.CharField(
+    post_title = models.CharField(help_text=('post title'),
         max_length=255
     )
     post_text = models.TextField(

@@ -1,20 +1,24 @@
 from django.contrib import admin
 
 from django.contrib import admin
-from .models import *
+from .models import Post, Category, PostCategory, Comment, Author
+from modeltranslation.admin import TranslationAdmin
 
-class PostAdmin(admin.ModelAdmin):
+
+class PostAdmin(TranslationAdmin):
     # list_display — это список или кортеж со всеми полями, которые вы хотите видеть в таблице с товарами
-    list_display = ['author', 'post_title', 'creation_date', 'post_rating']
-    list_filter = ('categories__category_name', 'news_type', 'author', 'creation_date')  # добавляем примитивные фильтры в нашу админку
-    search_fields = ('author', 'category__name')
+    model = Post
+    # list_display = ['author', 'post_title', 'creation_date', 'post_rating']
+    # list_filter = ('categories__category_name', 'news_type', 'author', 'creation_date')  # добавляем примитивные фильтры в нашу админку
+    # search_fields = ('author', 'category__name')
 
 
 class AuthorAdmin(admin.ModelAdmin):
     # list_display — это список или кортеж со всеми полями, которые вы хотите видеть в таблице с товарами
     list_display = ['user', 'user_rating']
-    list_filter = ('user', )  # добавляем примитивные фильтры в нашу админку
-    search_fields = ('user', )
+    list_filter = ('user',)  # добавляем примитивные фильтры в нашу админку
+    search_fields = ('user',)
+
 
 class CommentAdmin(admin.ModelAdmin):
     # list_display — это список или кортеж со всеми полями, которые вы хотите видеть в таблице с товарами
@@ -28,12 +32,16 @@ class PostCategoryAdmin(admin.ModelAdmin):
     list_display = ['post', 'category']
 
 
-
+class CategoryAdmin(TranslationAdmin):
+    model = Category
 
 
 admin.site.register(Category)
-admin.site.register(Post, PostAdmin)
+admin.site.register(Post)
 admin.site.register(PostCategory, PostCategoryAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Author, AuthorAdmin)
+
 # Register your models here.
+
+# Регистрируем модели для перевода в админке
