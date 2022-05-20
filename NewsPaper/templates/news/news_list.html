@@ -4,7 +4,7 @@
 {% load i18n %}
 {% load cache %}
 {% load tz %}
-
+    {% cache 300 header %}
         {% block title %}
         Post
         {% endblock title %}
@@ -12,8 +12,7 @@
 
 {% block content %}
 <h1>All news</h1>
-{{ TIME_ZONE }}
-    {{ current_time|timezone:TIME_ZONE }}
+
 <h5>Total {{ posts|length }} posts</h5>
 <form method="GET">
     {{ filter.form }} <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы придётся делать самому -->

@@ -134,16 +134,17 @@ class Index(View):
 
         context = {
             'models': models,
-            'current_time': timezone.now(),
-            'timezones': pytz.common_timezones  # добавляем в контекст все доступные часовые пояса
+            'current_time': curent_time,
+            'timezones': pytz.common_timezones,  # добавляем в контекст все доступные часовые пояса
+            'LANGUAGE_CODE': request.LANGUAGE_CODE
         }
 
         return HttpResponse(render(request, 'default.html', context))
 
-    #  по пост-запросу будем добавлять в сессию часовой пояс, который и будет обрабатываться написанным нами ранее middleware
     def post(self, request):
         request.session['django_timezone'] = request.POST['timezone']
         return redirect('/')
+
 
 
 
